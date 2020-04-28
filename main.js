@@ -64,11 +64,13 @@ aLaMode: false
 const buildPies = (pieCollection) => {
     let domString = '';
     for (let i=0;i<pieCollection.length;i++) {
+        const alaModeText = (pieCollection[i].aLaMode) ? 'w/ ice cream' : 'naked';
+
         domString += `
         <div class="pie">
             <h2><${pieCollection[i].type}</h2>
             <img src="${pieCollection[i].imageUrl}" alt="image of ${pieCollection[i].type}">
-            <p>This ${pieCollection[i].type} is a ${pieCollection[i].size}, it's owned by ${pieCollection[i].owner}, and has a ${pieCollection[i].crust} crust.</p>
+            <p>This ${pieCollection[i].type} is a ${pieCollection[i].size}, it's owned by ${pieCollection[i].owner}, and has a ${pieCollection[i].crust} crust and is served ${alaModeText}.</p>
             <h4>Price: ${pieCollection[i].price}</h4>
         </div>
         `;
